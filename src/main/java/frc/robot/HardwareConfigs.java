@@ -20,7 +20,7 @@ public final class HardwareConfigs {
        swerveAngleSparkConfig.idleMode(Constants.Swerve.angleNuetralMode);
 
        //Gear ratio and wrapping config
-       swerveAngleSparkConfig.encoder.positionConversionFactor(Constants.Swerve.angleGearRatio);
+       swerveAngleSparkConfig.encoder.positionConversionFactor(360/Constants.Swerve.angleGearRatio);
        swerveAngleSparkConfig.encoder.velocityConversionFactor(Constants.Swerve.angleGearRatio / 60);
        swerveAngleSparkConfig.closedLoop.positionWrappingEnabled(true);
 
@@ -45,9 +45,9 @@ public final class HardwareConfigs {
        swerveDriveSparkConfig.smartCurrentLimit(40);
 
        //PID config
-       swerveDriveSparkConfig.closedLoop.p(Constants.Swerve.driveKP);
-       swerveDriveSparkConfig.closedLoop.i(Constants.Swerve.driveKI);
-       swerveDriveSparkConfig.closedLoop.d(Constants.Swerve.driveKD);
+       swerveAngleSparkConfig.closedLoop.p(Constants.Swerve.angleKP);
+       swerveAngleSparkConfig.closedLoop.i(Constants.Swerve.angleKI);
+       swerveAngleSparkConfig.closedLoop.d(Constants.Swerve.angleKD);
 
        swerveAngleSparkConfig.openLoopRampRate(Constants.Swerve.openLoopRamp);
        swerveAngleSparkConfig.closedLoopRampRate(Constants.Swerve.closedLoopRamp);

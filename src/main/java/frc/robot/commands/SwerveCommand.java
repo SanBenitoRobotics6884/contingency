@@ -49,15 +49,15 @@ public class SwerveCommand extends Command {
         double strafeVal = MathUtil.applyDeadband(strafeSup.getAsDouble(), Constants.stickDeadband) * (dampenSup.getAsBoolean() ? 0.2 : 1);
         double rotationVal = MathUtil.applyDeadband(rotationSup.getAsDouble(), Constants.stickDeadband) * (dampenSup.getAsBoolean() ? 0.2 : 1);
         //TODO: Add code for dynamic heading- the supplier is a placeholder right now
-        double dynamicHeading = dynamicHeadingSup.getAsDouble();
+        double dynamicHeading = MathUtil.applyDeadband(dynamicHeadingSup.getAsDouble(), Constants.stickDeadband) * (dampenSup.getAsBoolean() ? 0.2 : 1);
         
      //heading direction state
         switch(States.driveState){
-            case forwardHold:
+             case forwardHold:
 
                 //heading lock - forward
                rotationVal = rotationController.calculate(s_Swerve.getHeading().getRadians(), Units.degreesToRadians(0));
-               System.out.println("HEADING LOCK");
+               System.out.println("HEADING LOCK little boi");
                 break;
             case backwardHold:
 
@@ -78,7 +78,7 @@ public class SwerveCommand extends Command {
         
                 //heading lock - dynamic
                 rotationVal = rotationController.calculate(s_Swerve.getHeading().getRadians(), Units.degreesToRadians(dynamicHeading));
-                break;
+                break; 
             case standard:
             
                 //normal
@@ -88,7 +88,7 @@ public class SwerveCommand extends Command {
 
         /* Drive */
         s_Swerve.drive(
-            new Translation2d(translationVal, strafeVal).times(Constants.Swerve.maxSpeed), 
+            new Translation2d(translationVal, strafeVal).times(Constants.Swerve./**Swerve*/maxSpeed),
             rotationVal,
             !robotCentricSup.getAsBoolean(), 
             true

@@ -41,7 +41,7 @@ public class SwerveMod{
         this.moduleNumber = moduleNumber;
         this.angleOffset = moduleConstants.angleOffset;
         
-         /* Angle Encoder Config */
+        /* Angle Encoder Config */
         angleEncoder = new CANcoder(moduleConstants.cancoderID, "rio");
 
         /* Angle Motor Config */

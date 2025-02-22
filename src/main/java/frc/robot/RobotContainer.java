@@ -30,7 +30,7 @@ public class RobotContainer {
    /* Driver Controls */
 	private final int translationAxis = 1;
 	private final int strafeAxis = 0;
-	private final int rotationAxis = 2;
+	private final int rotationAxis = 4;
 
     /* Driver Buttons */
     private final JoystickButton zeroGyro = new JoystickButton(driver, XboxController.Button.kY.value);
@@ -58,7 +58,7 @@ public class RobotContainer {
                 s_Swerve, 
                 () -> -driver.getRawAxis(translationAxis), 
                 () -> -driver.getRawAxis(strafeAxis), 
-                () -> driver.getRawAxis(rotationAxis), 
+                () -> -driver.getRawAxis(rotationAxis), 
                 () -> robotCentric.getAsBoolean(),
                 () -> dampen.getAsBoolean(),
                 () -> 0 // Dynamic heading placeholder

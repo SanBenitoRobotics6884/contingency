@@ -12,6 +12,8 @@ import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.math.util.Units;
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 
 public class SwerveCommand extends Command {    
@@ -50,7 +52,9 @@ public class SwerveCommand extends Command {
         double rotationVal = MathUtil.applyDeadband(rotationSup.getAsDouble(), Constants.stickDeadband) * (dampenSup.getAsBoolean() ? 0.2 : 1);
         //TODO: Add code for dynamic heading- the supplier is a placeholder right now
         double dynamicHeading = MathUtil.applyDeadband(dynamicHeadingSup.getAsDouble(), Constants.stickDeadband) * (dampenSup.getAsBoolean() ? 0.2 : 1);
-        
+        double test = rotationSup.getAsDouble();
+
+        SmartDashboard.putNumber("Joystick rotation", rotationSup.getAsDouble());
      //heading direction state
         switch(States.driveState){
              case forwardHold:

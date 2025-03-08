@@ -25,12 +25,12 @@ public class SwerveMod{
     private HardwareConfigs hardwareConfigs;
 
     public int moduleNumber;
-    private Rotation2d angleOffset;
+    public Rotation2d angleOffset;
 
-    private SparkMax mAngleMotor;
-    private SparkMax mDriveMotor;
+    public SparkMax mAngleMotor;
+    public SparkMax mDriveMotor;
 
-    private RelativeEncoder relAngleEncoder;
+    public RelativeEncoder relAngleEncoder;
     private RelativeEncoder relDriveEncoder;
 
     private CANcoder angleEncoder;
@@ -124,7 +124,7 @@ public class SwerveMod{
 
     public void resetToAbsolute(){
         double absolutePosition = getCANcoder().getDegrees() - angleOffset.getDegrees();
-        relAngleEncoder.setPosition(absolutePosition);
+        //relAngleEncoder.setPosition(absolutePosition);
     }
 
     public SwerveModuleState getState(){

@@ -53,7 +53,7 @@ public class RobotContainer {
 
     /** The container for the robot. Contains subsystems, OI devices, and commands. */
     public RobotContainer() {
-        s_Swerve.setDefaultCommand(
+        /*s_Swerve.setDefaultCommand(
             new SwerveCommand(
                 s_Swerve, 
                 () -> -driver.getRawAxis(translationAxis), 
@@ -62,6 +62,12 @@ public class RobotContainer {
                 () -> robotCentric.getAsBoolean(),
                 () -> dampen.getAsBoolean(),
                 () -> 0 // Dynamic heading placeholder
+            )
+        );
+        */
+        s_Swerve.setDefaultCommand(
+            new DebugSwerveCommand(
+                s_Swerve
             )
         );
 

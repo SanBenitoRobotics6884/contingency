@@ -36,8 +36,8 @@ public class DebugSwerveCommand extends Command {
             driveDutyCycle.Output = speedMps / Constants.Swerve.maxSpeed;
             //s_Swerve.mSwerveMods[i].mDriveMotor.setControl(driveDutyCycle);
             //System.out.println("setting speed to " + speedMps);
-            double angle = (System.currentTimeMillis() / 2000 ) % 10;
-            angle *= 36;
+            double angle = (System.currentTimeMillis() / 2000 ) % 8;
+            angle *= 45;
             SparkClosedLoopController angleController =  s_Swerve.mSwerveMods[i].mAngleMotor.getClosedLoopController();
             System.out.println("reAngle - " + s_Swerve.mSwerveMods[i].relAngleEncoder.getPosition());
             angleController.setReference(

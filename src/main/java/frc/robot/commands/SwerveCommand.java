@@ -56,7 +56,7 @@ public class SwerveCommand extends Command {
 
         SmartDashboard.putNumber("Joystick rotation", rotationSup.getAsDouble());
      //heading direction state
-        switch(States.driveState){
+      /*  switch(States.driveState){
              case forwardHold:
 
                 //heading lock - forward
@@ -88,7 +88,8 @@ public class SwerveCommand extends Command {
                 //normal
                 rotationVal = rotationVal * Constants.Swerve.maxAngularVelocity;
                 break;
-        }
+        } []\
+         */
 
         /* Drive */
         s_Swerve.drive(
